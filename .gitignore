@@ -1,0 +1,6 @@
+venv/
+.idea/
+.DS_Store
+prices.json
+startup_scrap.sh
+__pycache__/
