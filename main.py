@@ -14,6 +14,6 @@ if __name__ == '__main__':
         json.dump(prices, f)
 
     for price in prices.values():
-        if float(price) <= 449.0:
+        if float(price) < 449.0:
             send_prices(prices)
             exit(0)
