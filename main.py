@@ -10,11 +10,10 @@ if __name__ == '__main__':
     scrap_official_site(prices)
     scrap_amazon(prices)
 
-    with open('prices.json', 'w') as f:
+    with open('/Users/MateuszGrzybek/Desktop/oculus/prices.json', 'w') as f:
         json.dump(prices, f)
 
     for price in prices.values():
         if float(price) <= 449.0:
             send_prices(prices)
             exit(0)
-

@@ -4,3 +4,4 @@ venv/
 prices.json
 startup_scrap.sh
 __pycache__/
+cron_logs/

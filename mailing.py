@@ -12,8 +12,8 @@ def send_prices(prices):
     port = 465  # port for ssl conneciton
     subject = "Oculus prices"
     body = "This an automated email from a Python script"
-    sender_email = 'mtsz.grzybek@gmail.com'
-    receiver_email = 'mtsz.grzybek@gmail.com'
+    sender_email = os.environ.get('OCULUS_MAIL')
+    receiver_email = os.environ.get('OCULUS_MAIL')
     password = os.environ.get('OCULUS_PASS')
 
     # create a secure ssl context
@@ -28,9 +28,10 @@ def send_prices(prices):
 
     # Add body to the email
     message.attach(MIMEText(body, "plain"))
-    filename = "prices.json"
+    filename = 'prices.json'
+    filepath = '/Users/MateuszGrzybek/Desktop/oculus/prices.json'
 
-    with open(filename, "rb") as attachment:
+    with open(filepath, "r") as attachment:
         part = MIMEBase("application", "octet-stream")
         part.set_payload(attachment.read())
 
