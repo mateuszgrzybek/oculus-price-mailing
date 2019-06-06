@@ -11,7 +11,7 @@ def send_prices(prices):
     """Send an email containing the json file with headset's prices."""
     port = 465  # port for ssl conneciton
     subject = "Oculus prices"
-    body = "This an automated email from a Python script"
+    body = "This is an automated email from a Python script."
     sender_email = os.environ.get('OCULUS_MAIL')
     receiver_email = os.environ.get('OCULUS_MAIL')
     password = os.environ.get('OCULUS_PASS')
