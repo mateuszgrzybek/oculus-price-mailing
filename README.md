@@ -39,3 +39,7 @@ Now run `crontab -e` and add the following:
 This will run the bash wrapper script every hour.  
 Adjust the absolute paths so that they reflect the actual location of the repository on your local machine. You can also adjust the frequency of the cron job.
 The `cron.log` will be created at first execution of the script. It's contents will be updated at each consecutive execution.
+
+## TODO/ideas
+* Come up with more sources for price scraping and construct functions around them
+* Dockerize the app
