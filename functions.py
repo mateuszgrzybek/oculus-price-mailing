@@ -39,4 +39,4 @@ def scrap_amazon(prices):
     domain = 'https://www.amazon.de/dp/B07PTMKYS7'
     soup = BeautifulSoup(get_url(domain), 'html.parser')
     price = soup.find('span', class_='a-size-medium a-color-price priceBlockBuyingPriceString').text.replace(',', '.')
-    prices[domain] = float(price[4:])
+    prices[domain] = float(price[:5])
