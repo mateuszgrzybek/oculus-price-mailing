@@ -29,13 +29,17 @@ export OCULUS_MAIL=put_your_email_here
 ## Automation
 For the purpose of automating the program, author has a set up cron job. In order to replicate it, first run:
 ```
-chmod +x path/to/oculus-price-mailing/shell_automation.sh
+chmod +x path/to/oculus-price-mailing/cron_wrapper.sh
 ```
 The shell wrapper is now an executable.  
 Now run `crontab -e` and add the following:
 ```
-0 * * * * /absolute/path/to/oculus-price-mailing/shell_automation.sh >> /absolute/path/to/oculus-price-mailing/cron.log 2>&1
+0 * * * * /absolute/path/to/oculus-price-mailing/cron_wrapper.sh >> /absolute/path/to/oculus-price-mailing/cron.log 2>&1
 ```
 This will run the bash wrapper script every hour.  
 Adjust the absolute paths so that they reflect the actual location of the repository on your local machine. You can also adjust the frequency of the cron job.
 The `cron.log` will be created at first execution of the script. It's contents will be updated at each consecutive execution.
+
+## TODO/ideas
+* Come up with more sources for price scraping and construct functions around them
+* Dockerize the app
